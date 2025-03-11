@@ -16,16 +16,15 @@ public class UserService {
 	 private PasswordEncoder  passwordEncoder;
 
 	public String registerUser(String userName, String password, String role) {
-	Optional<User> existingUser = userRepostory.findByEmail(userName);
+	Optional<User> existingUser = userRepostory.findByName(userName);
 		if(existingUser.isPresent()) {
 			return "Error :User already exist";
 		}
-//		String encryptedPassword =passwordEncoder.encode(password);
-//	
-//		User newUser = new User(userName,encryptedPassword,role);
-//		userRepostory.save(newUser);
-//		return "User registered successfully!";
-//	}
+		String encryptedPassword =passwordEncoder.encode(password);
+	
+		User newUser = new User(userName, role, encryptedPassword);
+		userRepostory.save(newUser);
+		return "User registered successfully!";
+	}
 	
 	}
-}

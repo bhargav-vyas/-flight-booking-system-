@@ -18,13 +18,15 @@ public class User {
  private String role;
  private String password ;
  
-  public User() {
-}
+ 
 public User(Long id, String userName, String role, String password){
 	super();
 	UserName = userName;
 	this.role = role;
 	this.password =password;
+}
+public User(String userName2, String role2, String encryptedPassword) {
+
 }
 public String getPasswod() {
 	return password;
