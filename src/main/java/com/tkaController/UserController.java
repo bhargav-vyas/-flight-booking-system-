@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.tkaService.UserService;
 @RestController
-@RequestMapping("/User")
+@RequestMapping("/api/auth")
 public class UserController {
 	
 	@Autowired
