@@ -20,12 +20,12 @@ public class UserService {
 		if(existingUser.isPresent()) {
 			return "Error :User already exist";
 		}
-		String encryptedPassword =passwordEncoder.encode(password);
+//		String encryptedPassword =passwordEncoder.encode(password);
+//	
+//		User newUser = new User(userName,encryptedPassword,role);
+//		userRepostory.save(newUser);
+//		return "User registered successfully!";
+//	}
 	
-		User newUser = new User(userName,encryptedPassword,role);
-		userRepostory.save(newUser);
-		return "User registered successfully!";
 	}
-	
-
 }
