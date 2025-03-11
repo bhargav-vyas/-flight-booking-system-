@@ -16,14 +16,21 @@ public class User {
  private String  UserName;
  @Column
  private String role;
+ private String password ;
+ 
   public User() {
-	// TODO Auto-generated constructor stub
 }
-public User(Long id, String userName, String role) {
+public User(Long id, String userName, String role, String password){
 	super();
-	Id = id;
 	UserName = userName;
 	this.role = role;
+	this.password =password;
+}
+public String getPasswod() {
+	return password;
+}
+public void setPasswod(String password) {
+	this.password = password;
 }
 public Long getId() {
 	return Id;
@@ -45,7 +52,7 @@ public void setRole(String role) {
 }
 @Override
 public String toString() {
-	return "User [Id=" + Id + ", UserName=" + UserName + ", role=" + role + "]";
+	return "User [Id=" + Id + ", UserName=" + UserName + ", role=" + role + ", passwod=" + password + "]";
 }
   
  
