@@ -8,10 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.tkaDTO.UserLoginDTO;
 import com.tkaEntity.User;
 import com.tkaService.UserService;
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/User")
 public class UserController {
 	
 	@Autowired
@@ -19,9 +20,10 @@ public class UserController {
 	
 	
 	@PostMapping("/register")
-	public ResponseEntity<String> registerUser(@RequestBody User user ) {
+	public ResponseEntity<String> registerUser(@RequestBody UserLoginDTO userLoginDTO ) {
+	
+		String response =userService.resistorUser(userLoginDTO);
 		return  ResponseEntity.ok("User register successfully !");
-		
 	}
 
 }
